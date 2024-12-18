@@ -90,7 +90,7 @@ document.querySelectorAll ('.js-add-to-cart')
 
     }
     //adding to cart
-     
+                
     console.log(cart);  
   });
 });

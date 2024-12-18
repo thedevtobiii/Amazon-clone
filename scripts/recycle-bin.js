@@ -14,7 +14,7 @@ const products = [
       count: 87
     },
     priceCents: 1090
-  },   //product 1 done!
+  },   //product 1 done!   
   {
     image:'images/products/intermediate-composite-basketball.jpg',
     name:'Intermediate Size Basketball',
