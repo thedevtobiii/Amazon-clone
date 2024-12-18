@@ -89,9 +89,15 @@ document.querySelectorAll ('.js-add-to-cart')
       }); 
 
     }
-    //adding to cart
-                
-    console.log(cart);  
+    //calculating cart total quantity
+    let cartQuantity = 0;
+     cart.forEach((item)=>{
+      cartQuantity += item.quantity;
+
+     }) ;  
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+    
+   
   });
 });
 //now to check if product is already in cart, if it is we increase quantity by 1, if it isn't we add it to the cart by looping through our cart and look for a particular product name^
