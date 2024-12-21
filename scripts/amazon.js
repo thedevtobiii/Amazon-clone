@@ -1,4 +1,4 @@
-import { cart } from "../data/cart.js";  
+import { cart, addToCart } from "../data/cart.js";  
 import { products } from "../data/products.js";    
 let productsHTML ='';  
 products.forEach((product) => {
@@ -64,42 +64,25 @@ this generates the html for each object and therefore the entire product section
 document.querySelector('.js-products-grid').innerHTML= productsHTML;
 //we are basically saying all the Html that should exist in the parent container should be the only one we allow i.e the variable productsHTML!
 
-//SECTION 3: making the add to cart button interactive
+//SECTION 4: making the add to cart button interactive
 //NOTES: we got all the add to cart button using document.queryselectorAll and the class we added, then saved it in the button parameter then addeventlistener.
 
+
+function updateCartQuantity (){
+ //calculating cart total quantity
+ let cartQuantity = 0;
+ cart.forEach((cartItem)=>{
+  cartQuantity += cartItem.quantity;
+
+ }) ;  
+document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
 
 document.querySelectorAll ('.js-add-to-cart')
 .forEach((button)=>{
   button.addEventListener('click', ()=>{
-    const productId = button.dataset.productId; 
-    //revisit
-
-    let matchingItem;
-    cart.forEach((item)=> {
-      if (productId === item.productId){
-        matchingItem = item;
-
-      }
-
-    });
-    if (matchingItem){
-      matchingItem.quantity +=1
-    } else{
-      cart.push({
-        productId: productId,
-        quantity:1
-      }); 
-
-    }
-    //calculating cart total quantity
-    let cartQuantity = 0;
-     cart.forEach((item)=>{
-      cartQuantity += item.quantity;
-
-     }) ;  
-    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-    
-   
+    const productId = button.dataset.productId; //gets the data attribute value and saves it inside productID
+    addToCart(productId);
+    updateCartQuantity();
   });
 });
-//now to check if product is already in cart, if it is we increase quantity by 1, if it isn't we add it to the cart by looping through our cart and look for a particular product name^
