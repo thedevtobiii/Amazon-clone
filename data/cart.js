@@ -58,3 +58,17 @@ export function removeFromCart (productId){
  cart = newCart;
  saveToStorage();
 }
+
+//update deliveryOptionId in cart
+export function updateDeliveryOption(productId, deliveryOptionId){
+  let matchingItem; //NEW VARIABLE FOR MATCHING ITEMS
+  cart.forEach((cartItem)=> {
+    if (productId === cartItem.productId){
+      matchingItem = cartItem;  
+
+    } //LOOPS THROUGH CART, SAVES EACH PRODUCT IN CART IN THE CARTITEM PARAMETER, CHECKS IF IT IS IDENTICAL TO THE PRODUCT TO BE ADDED TO CART, SAVES IN MATCHING ITEM IF IT IS.
+
+  });
+matchingItem.deliveryOptionId = deliveryOptionId;
+saveToStorage();   
+}
