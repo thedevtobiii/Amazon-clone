@@ -3,23 +3,7 @@
   "public": true,
   "builds": [
     {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "checkout.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "amazon.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "tracking.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "orders.html",
+      "src": "**/*.html",
       "use": "@vercel/static"
     },
     {
@@ -32,14 +16,6 @@
     },
     {
       "src": "styles/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "data/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "tests/**",
       "use": "@vercel/static"
     }
   ],
