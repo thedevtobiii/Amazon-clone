@@ -29,7 +29,15 @@
       "dest": "/checkout.html"
     },
     {
+      "src": "/checkout.html",
+      "dest": "/checkout.html"
+    },
+    {
       "src": "/amazon",
+      "dest": "/amazon.html"
+    },
+    {
+      "src": "/amazon.html",
       "dest": "/amazon.html"
     },
     {
@@ -37,8 +45,24 @@
       "dest": "/tracking.html"
     },
     {
+      "src": "/tracking.html",
+      "dest": "/tracking.html"
+    },
+    {
       "src": "/orders",
       "dest": "/orders.html"
+    },
+    {
+      "src": "/orders.html",
+      "dest": "/orders.html"
+    },
+    {
+      "src": "/tests/tests.html",
+      "dest": "/tests/tests.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
