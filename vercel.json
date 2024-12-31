@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "checkout.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "amazon.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "tracking.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "orders.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "scripts/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "styles/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "data/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "tests/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/checkout",
+      "dest": "/checkout.html"
+    },
+    {
+      "src": "/amazon",
+      "dest": "/amazon.html"
+    },
+    {
+      "src": "/tracking",
+      "dest": "/tracking.html"
+    },
+    {
+      "src": "/orders",
+      "dest": "/orders.html"
+    }
+  ]
+}
