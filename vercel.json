@@ -1,36 +1,5 @@
 {
-  "version": 2,
-  "public": true,
-  "builds": [
-    {
-      "src": "**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/checkout",
-      "dest": "/checkout.html"
-    },
-    {
-      "src": "/amazon",
-      "dest": "/amazon.html"
-    },
-    {
-      "src": "/tracking",
-      "dest": "/tracking.html"
-    },
-    {
-      "src": "/orders",
-      "dest": "/orders.html"
-    },
-    {
-      "src": "/tests",
-      "dest": "/tests/tests.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/checkout.html"
-    }
+  "rewrites": [
+    { "source": "/{.*}", "destination": "/" }
   ]
 }
