@@ -1,8 +1,16 @@
 class Cart {
 //  class means object generator
-cartItems = undefined;  //every object generated will have this property
+cartItems;  //every object generated will have this property
+localStorageKey;
+constructor (localStorageKey){
+  //runs set up code automatically when we generate the object
+  this.localStorageKey = localStorageKey;
+// businessCart.localStorageKey = 'cart-business';   needs one
 
-localStorageKey = undefined;
+this.loadFromStorage();   
+// businessCart.loadFromStorage();
+  
+}
 loadFromStorage (){   
   this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
 
@@ -76,21 +84,13 @@ addToCart (productId){
 }
 
 
-const cart= new Cart();
-const businessCart = new Cart();   
-cart.localStorageKey = 'cart.oop';
-businessCart.localStorageKey = 'cart-business';
+const cart= new Cart('cart-oop');
+const businessCart = new Cart('cart-business');     
 
-  
-cart.loadFromStorage(); 
-
-
-
-
-  
-businessCart.loadFromStorage();
 console.log(cart);
-console.log(businessCart);        
+console.log(businessCart);       
+
+console.log(businessCart instanceof Cart);
 
 
 
