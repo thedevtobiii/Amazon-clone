@@ -12,7 +12,7 @@ products.forEach((product) => {
                     </div>
 
                     <div class="product-name limit-text-to-2-lines">
-                     p${product.name}
+                     ${product.name}   
                     </div>
 
                     <div class="product-rating-container">
@@ -40,7 +40,9 @@ products.forEach((product) => {
                         <option value="9">9</option>
                         <option value="10">10</option>
                       </select>
-                    </div>
+                    </div>  
+
+                    ${product.extraInfoHTML()}    
 
                     <div class="product-spacer"></div>
 
