@@ -71,4 +71,13 @@ const tshirt = new Clothing(
 console.log(tshirt);
 console.log (tshirt.getPrice); 
 //from classes 
+//from promises and fetch
+ new Promise((resolve)=>{
+    //runs the inner function immediately
+   //  console.log('promise');  
+   loadProductsFetch(()=>{
+    
+     resolve('value1');   
+   });
+ })   
 
